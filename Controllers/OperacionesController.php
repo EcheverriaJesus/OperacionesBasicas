@@ -2,6 +2,15 @@
 require_once 'model/OperacionModel.php';
 
 class OperacionesController {
+
+    private $operacionModel;
+    private $conn; // Agrega esta línea
+
+    public function __construct($conn) {
+        $this->conn = $conn; // Almacena la conexión
+        $this->operacionModel = new OperacionModel($conn);
+    }
+
     public function realizarOperacion($num1, $num2, $operacion) {
         switch ($operacion) {
             case 'suma':
@@ -24,7 +33,7 @@ class OperacionesController {
                 return "Operación no válida";
         }
 
-        $operacionModel = new OperacionModel();
+        $operacionModel = new OperacionModel($this->conn);
         $guardado = $operacionModel->guardarOperacion($num1, $num2, $operacion, $resultado);
 
         if ($guardado) {

@@ -2,18 +2,6 @@
 <html>
 <head>
     <title>Resultado</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            clifford: '#da373d',
-          }
-        }
-      }
-    }
-  </script>
 </head>
 <body>
     <h1>Resultado</h1>
