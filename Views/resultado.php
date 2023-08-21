@@ -21,4 +21,3 @@
     <a href="index.php">Realizar otra operación</a>
 </body>
 </html>
-

@@ -20,16 +20,16 @@
         <div class="flex flex-col border border-black h-1/2 w-auto">
           <h1 class="bg-blue-500">Operaciones Básicas</h1>
           <form method="post" action="index.php">
-              <input class="border border-black" type="number" name="num1" required>
-              <select name="operacion">
-                  <option value="suma">Suma</option>
-                  <option value="resta">Resta</option>
-                  <option value="multiplicacion">Multiplicación</option>
-                  <option value="division">División</option>
-              </select>
-              <input  class="border border-black" type="number" name="num2" required>
-              <button type="submit">Calcular</button>
-          </form>
+        <input type="number" name="num1" required>
+        <select name="operacion">
+            <option value="suma">Suma</option>
+            <option value="resta">Resta</option>
+            <option value="multiplicacion">Multiplicación</option>
+            <option value="division">División</option>
+        </select>
+        <input type="number" name="num2" required>
+        <button type="submit">Calcular</button>
+    </form>
         </div>
     </section>
 </body>

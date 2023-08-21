@@ -1,5 +1,5 @@
 <?php
-require_once 'Database.php';
+require_once 'db_config.php';
 
 class OperacionModel {
     public function guardarOperacion($num1, $num2, $operacion, $resultado) {

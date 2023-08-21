@@ -1,10 +1,5 @@
-<!-- <?php
-echo "Jesus Echeverria"
-?> -->
-
-
 <?php
-require_once 'Controllers/OperacionesController.php';
+require 'Controllers/OperacionesController.php';
 
 $operacionesController = new OperacionesController();
 

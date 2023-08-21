@@ -1,21 +1,36 @@
 <?php
+require_once 'model/OperacionModel.php';
+
 class OperacionesController {
     public function realizarOperacion($num1, $num2, $operacion) {
         switch ($operacion) {
             case 'suma':
-                return $num1 + $num2;
+                $resultado = $num1 + $num2;
+                break;
             case 'resta':
-                return $num1 - $num2;
+                $resultado = $num1 - $num2;
+                break;
             case 'multiplicacion':
-                return $num1 * $num2;
+                $resultado = $num1 * $num2;
+                break;
             case 'division':
                 if ($num2 != 0) {
-                    return $num1 / $num2;
+                    $resultado = $num1 / $num2;
                 } else {
                     return "Error: División por cero";
                 }
+                break;
             default:
                 return "Operación no válida";
+        }
+
+        $operacionModel = new OperacionModel();
+        $guardado = $operacionModel->guardarOperacion($num1, $num2, $operacion, $resultado);
+
+        if ($guardado) {
+            return $resultado;
+        } else {
+            return "Error al guardar la operación";
         }
     }
 }
