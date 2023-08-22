@@ -4,10 +4,10 @@ require_once 'model/OperacionModel.php';
 class OperacionesController {
 
     private $operacionModel;
-    private $conn; // Agrega esta línea
+    private $conn;
 
     public function __construct($conn) {
-        $this->conn = $conn; // Almacena la conexión
+        $this->conn = $conn;
         $this->operacionModel = new OperacionModel($conn);
     }
 
