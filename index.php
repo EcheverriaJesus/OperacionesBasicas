@@ -1,5 +1,5 @@
 <?php
-/* Requerir el controlador */
+/* Requerir el controlador para las operaaciones */
 require 'Controllers/OperacionesController.php';
 /* Requerir la configuracion de la BD */
 require 'db_config.php';

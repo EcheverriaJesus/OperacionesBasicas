@@ -14,12 +14,20 @@ if ($conn->connect_error) {
 
 /* Nombre BD */
 $db_name = 'operaciones_basicas';
-/* Crear base de datos */
-$sql = "CREATE DATABASE IF NOT EXISTS $db_name";
-if ($conn->query($sql) === TRUE) {
-    echo "Base de datos creada exitosamente";
-} else {
-    echo "Error al crear la base de datos: " . $conn->error;
+
+/* Verificar si la base de datos ya existe */
+$sql_check = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '$db_name'";
+$result_check = $conn->query($sql_check);
+
+if ($result_check->num_rows == 0) {
+    /* Crear la BD si no existe */
+    $sql_create = "CREATE DATABASE $db_name";
+    
+    if ($conn->query($sql_create) === TRUE) {
+        echo "Base de datos creada exitosamente";
+    } else {
+        echo "Error al crear la base de datos: " . $conn->error;
+    }
 }
 
 /* Seleccionar BD de  MySql*/
